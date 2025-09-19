@@ -127,6 +127,7 @@ $$
    $$
    f(x) = \frac{1}{1 + e^{-x}}
    $$
+`f(x) = 1 / (1 + e^(-x))`
 
    - Outputs between (0,1).
    - Good for probability interpretation.
@@ -137,6 +138,7 @@ $$
    $$
    f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
    $$
+`f(x) = (e^x - e^(-x)) / (e^x + e^(-x))`
 
    - Outputs between (-1,1).
    - Centered at 0 (better than sigmoid).
@@ -147,6 +149,7 @@ $$
    $$
    f(x) = \max(0, x)
    $$
+`f(x) = max(0, x)`
 
    - Most widely used.
    - Pros: no vanishing gradient for positive inputs, very fast.
@@ -157,6 +160,7 @@ $$
    $$
    f(x) = \max(0.01x, x)
    $$
+`f(x) = max(0.01 * x, x)`
 
    - Fixes dying ReLU.
 
@@ -231,4 +235,5 @@ $$
 - **Linear for Regression**: predicts continuous values.
 
 ---
+
 
