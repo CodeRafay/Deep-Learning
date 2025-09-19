@@ -208,10 +208,13 @@ $$
 - **Cross-Entropy Loss**:
 
   - For true label y and predicted softmax p:
-
+ <!-- 
   $$
   L = -\sum y_i \log(p_i)
   $$
+   -->
+   
+  `L = -∑ yᵢ log(pᵢ)`
 
   - Encourages correct class probability → 1.
 
@@ -228,3 +231,4 @@ $$
 - **Linear for Regression**: predicts continuous values.
 
 ---
+
