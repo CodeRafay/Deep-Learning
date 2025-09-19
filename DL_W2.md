@@ -127,8 +127,6 @@ $$
    $$
    f(x) = \frac{1}{1 + e^{-x}}
    $$
-   $$ f(x) = \frac{1}{1 + e^{-x}} \text{ where x is the input} $$
-
 `f(x) = 1 / (1 + e^(-x))`
 
    - Outputs between (0,1).
@@ -237,6 +235,7 @@ $$
 - **Linear for Regression**: predicts continuous values.
 
 ---
+
 
 
 
