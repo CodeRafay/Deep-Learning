@@ -165,7 +165,8 @@ Quick map:
 - **Detect data leakage**: ensure no features leak label info, avoid using test-time information in training.
 - **OOD detection**: flag inputs outside training distribution.
 
-## <!--
+
+<!--
 
 ## Advanced theories and tools you may need to know for exams
 
