@@ -127,13 +127,15 @@ $$
    $$
    f(x) = \frac{1}{1 + e^{-x}}
    $$
+   $$ f(x) = \frac{1}{1 + e^{-x}} \text{ where x is the input} $$
+
 `f(x) = 1 / (1 + e^(-x))`
 
    - Outputs between (0,1).
    - Good for probability interpretation.
    - Problem: **Vanishing gradients** for large |x|.
 
-2. **Tanh**
+3. **Tanh**
 
    $$
    f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
@@ -144,7 +146,7 @@ $$
    - Centered at 0 (better than sigmoid).
    - Still suffers from vanishing gradient.
 
-3. **ReLU (Rectified Linear Unit)**
+4. **ReLU (Rectified Linear Unit)**
 
    $$
    f(x) = \max(0, x)
@@ -155,7 +157,7 @@ $$
    - Pros: no vanishing gradient for positive inputs, very fast.
    - Cons: **Dying ReLU problem** (neurons stuck at 0 if weights misaligned).
 
-4. **Leaky ReLU**
+5. **Leaky ReLU**
 
    $$
    f(x) = \max(0.01x, x)
@@ -164,7 +166,7 @@ $$
 
    - Fixes dying ReLU.
 
-5. **ELU / GELU / Swish**
+6. **ELU / GELU / Swish**
 
    - Advanced activations with smoother curves.
    - Used in modern architectures (Transformers often use GELU).
@@ -235,5 +237,6 @@ $$
 - **Linear for Regression**: predicts continuous values.
 
 ---
+
 
 
