@@ -165,7 +165,6 @@ Quick map:
 - **Detect data leakage**: ensure no features leak label info, avoid using test-time information in training.
 - **OOD detection**: flag inputs outside training distribution.
 
-
 <!--
 
 ## Advanced theories and tools you may need to know for exams
@@ -294,7 +293,145 @@ Regularization adds constraints or modifications to the training process to prev
 
 ---
 
-### **3.4. Other Regularization Methods**
+<!-- ### **3.4. Batch Normalization (BN) and Its Effect on Convergence**
+
+### **What is Batch Normalization?**
+
+- A technique introduced to **normalize activations** within a layer during training.
+- Each mini-batch’s activations are normalized to have **zero mean** and **unit variance**, then scaled and shifted with learnable parameters ($\gamma, \beta$).
+
+$$
+\hat{x}_i = \frac{x_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}}
+$$
+
+$$
+y_i = \gamma \hat{x}_i + \beta
+$$
+
+Where:
+
+- $\mu_B$, $\sigma_B^2$ → mean and variance of mini-batch.
+- $\epsilon$ → small constant for numerical stability.
+
+---
+
+### **Why BN Helps Convergence**
+
+1. **Reduces Internal Covariate Shift**:
+
+   - As parameters update, the distribution of activations changes.
+   - BN stabilizes these distributions, making training smoother.
+
+2. **Allows Higher Learning Rates**:
+
+   - Without BN, high learning rates often cause divergence.
+   - BN smooths the loss surface, so larger steps can be taken.
+
+3. **Acts as Regularization**:
+
+   - Adds small noise due to batch statistics.
+   - Reduces overfitting, sometimes making **Dropout less necessary**.
+
+4. **Improves Gradient Flow**:
+
+   - Prevents gradients from vanishing or exploding, especially in deep networks.
+
+5. **Speeds Up Convergence**:
+
+   - Networks often converge in fewer epochs when BN is used.
+
+---
+
+### **Trade-offs of Batch Normalization**
+
+- Depends on **batch size** (unstable if batches are too small).
+- Adds **computational overhead**.
+- For **Recurrent Neural Networks (RNNs)**, BN is tricky due to sequence dependency → alternatives like **Layer Normalization** or **Group Normalization** are used. -->
+
+---
+
+### **3.4. Batch Size and Its Effect on Convergence & Stability**
+
+#### **What is Batch Size?**
+
+- The number of training samples used to compute the gradient before updating weights.
+- A key hyperparameter in training.
+
+---
+
+#### **Effects of Batch Size**
+
+#### **1. Small Batch Size (e.g., 16, 32)**
+
+- **Pros**:
+
+  - Noisy gradients → acts like regularization, preventing overfitting.
+  - Better generalization (helps find flatter minima).
+
+- **Cons**:
+
+  - Training slower per epoch.
+  - Noisier convergence curve (zigzaggy loss function).
+  - May under-utilize GPUs.
+
+---
+
+#### **2. Large Batch Size (e.g., 256, 512, 1024)**
+
+- **Pros**:
+
+  - Faster training per epoch (parallelization on GPUs).
+  - More stable gradient estimates.
+
+- **Cons**:
+
+  - Poor generalization (sharp minima, overfitting risk).
+  - Requires lower learning rates to avoid divergence.
+  - Higher memory requirements.
+
+---
+
+#### **Batch Size and Learning Rate Scaling**
+
+There’s a well-known heuristic:
+
+$$
+\eta_{new} = \eta_{old} \times \frac{B_{new}}{B_{old}}
+$$
+
+- When batch size increases, learning rate should also increase proportionally to maintain stability (used in large-scale training like ImageNet).
+
+---
+
+### **BN and Batch Size Interaction**
+
+- **BN relies on mini-batch statistics**. If batch size is too small (like 2, 4, 8), the estimates of mean/variance become unstable → training may oscillate.
+- Small batches + BN → leads to poor convergence.
+- Alternatives in such cases: **Layer Normalization, Group Normalization, Instance Normalization**.
+
+---
+
+### **Summary: BN vs. Batch Size in Convergence**
+
+| Concept                 | Effect on Convergence | Effect on Stability  | Effect on Generalization            |
+| ----------------------- | --------------------- | -------------------- | ----------------------------------- |
+| **Batch Normalization** | Faster convergence    | Stabilizes gradients | Adds mild regularization            |
+| **Small Batch Size**    | Slower per epoch      | Noisy updates        | Better generalization               |
+| **Large Batch Size**    | Faster per epoch      | Stable gradients     | Risk of overfitting                 |
+| **BN + Large Batch**    | Works well            | Very stable          | Good training, risk of sharp minima |
+| **BN + Tiny Batch**     | Unstable              | Oscillations         | Bad performance                     |
+
+---
+
+In practice:
+
+- Use **mini-batch sizes between 32 and 256** for balanced performance.
+- Combine with **Batch Normalization** for stable and fast convergence.
+- For very small batch sizes, prefer **LayerNorm** or **GroupNorm** instead of BN.
+
+---
+
+### **3.5. Other Regularization Methods**
 
 - **Batch Normalization**: stabilizes training and sometimes improves generalization by reducing internal covariate shift.
 - **Label Smoothing**: softens target probabilities, discouraging the network from becoming overconfident.
