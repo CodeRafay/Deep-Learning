@@ -1,3 +1,8 @@
+## Star the Repo :)
+
+If you find these notes helpful, don't forget to **star the repository** to show your support! 🌟
+
+
 # Deep Learning (DLP) Notes
 
 Welcome to the Deep Learning (DLP) Notes repository! This repository contains organized notes in Markdown format, designed to help students learn and understand deep learning concepts. Whether you're just starting with deep learning or looking to deepen your knowledge, this repository will provide clear explanations, code examples, and practical applications.
@@ -32,13 +37,13 @@ The notes are divided into the following key areas of Deep Learning:
     - Forward and backward propagation
     - Gradient descent and optimization algorithms (SGD, Adam, etc.)
     - Loss functions (Cross-Entropy, MSE)
-      
-## To be covered
-
+  
 4. **Convolutional Neural Networks (CNNs)**
     - Basics of CNN architecture
     - Convolution, Pooling, and Fully Connected layers
     - Use cases in image classification and object detection
+      
+## To be covered
 
 5. **Recurrent Neural Networks (RNNs)**
     - RNN architecture and use cases
@@ -92,11 +97,6 @@ Contributions to improve these notes are always welcome! If you spot any errors,
 ## License
 
 This repository is licensed under the Apache 2.0 License. See [LICENSE](LICENSE) for more details.
-
-## Star the Repo :)
-
-If you find these notes helpful, don't forget to **star the repository** to show your support! 🌟
-
 ---
 
 Feel free to explore the notes and enhance your understanding of Deep Learning. Happy learning and coding!
