@@ -148,7 +148,7 @@ All RNN cells are **copies** sharing the same parameters.
 
 📷 Example visualization:
 
-![RNN](https://www.researchgate.net/profile/Rishikesh-Gawde/publication/351840108/figure/fig1/AS:1027303769374723@1621939713840/Fig-3-RNN-A-recurrent-neural-network-RNN-is-a-class-of-artificial-neural-networks.ppm)
+[RNN Architecture diagram](https://www.researchgate.net/profile/Rishikesh-Gawde/publication/351840108/figure/fig1/AS:1027303769374723@1621939713840/Fig-3-RNN-A-recurrent-neural-network-RNN-is-a-class-of-artificial-neural-networks.ppm)
 
 ---
 
@@ -281,7 +281,7 @@ An LSTM has:
 - Output gate
 - Cell state
 
-![LSTM Architecture](https://www.researchgate.net/profile/Ahmed-Elkaseer/publication/356018554/figure/fig1/AS:1088159563677697@1636448865987/A-Long-short-term-memory-LSTM-unit-architecture.png)
+![LSTM Architecture diagram](https://www.researchgate.net/profile/Ahmed-Elkaseer/publication/356018554/figure/fig1/AS:1088159563677697@1636448865987/A-Long-short-term-memory-LSTM-unit-architecture.png)
 
 ---
 
@@ -327,7 +327,7 @@ Differences:
 
 ---
 
-![GRU](https://www.researchgate.net/publication/370683092/figure/fig2/AS:11431281207716844@1701313562353/TheArchitecture-of-the-gated-recurrent-unit-GRU-cell.png)
+[GRU Architecture diagram](https://www.researchgate.net/publication/370683092/figure/fig2/AS:11431281207716844@1701313562353/TheArchitecture-of-the-gated-recurrent-unit-GRU-cell.png)
 
 ### **GRU Equations**
 
