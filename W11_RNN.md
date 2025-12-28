@@ -281,7 +281,7 @@ An LSTM has:
 - Output gate
 - Cell state
 
-![LSTM Architecture diagram](https://www.researchgate.net/profile/Ahmed-Elkaseer/publication/356018554/figure/fig1/AS:1088159563677697@1636448865987/A-Long-short-term-memory-LSTM-unit-architecture.png)
+[LSTM Architecture diagram](https://www.researchgate.net/profile/Ahmed-Elkaseer/publication/356018554/figure/fig1/AS:1088159563677697@1636448865987/A-Long-short-term-memory-LSTM-unit-architecture.png)
 
 ---
 
@@ -387,3 +387,4 @@ $$h_t = (1 - z_t) \cdot h_{t-1} + z_t \cdot \tilde{h}_t$$
 | Very Long + Parallel | Transformers |
 
 ---
+
