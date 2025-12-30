@@ -768,9 +768,8 @@ _Note: This is a hypothetical deep architecture to illustrate progressive compre
 #### 1. **Compression Rate**
 
 For each encoder layer:
-
 $$
-\text{output\_dim} \approx 0.5 \times \text{input\_dim}
+\text{output_dim} \approx 0.5 \times \text{input_dim}
 $$
 
 **Example:**
@@ -1490,3 +1489,4 @@ Autoencoders don't eliminate the curse of dimensionality—no method can when da
 - β-VAE: Higgins, I., et al. (2016). Beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework.
 
 ---
+
