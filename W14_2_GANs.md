@@ -201,17 +201,17 @@ Parameters may oscillate even when quality improves
 
 ### 5.1 Connection to Divergence Measures
 
-The GAN objective can be reframed using divergence measures. At optimal discriminator $D^*$ for fixed $G$:
+The GAN objective can be reframed using divergence measures. At optimal discriminator $D^{*}$ for fixed $G$:
 
-$$D^*(x) = \frac{p_{data}(x)}{p_{data}(x) + p_G(x)}$$
+$$D^{*}(x) = \frac{p_{data}(x)}{p_{data}(x) + p_G(x)}$$
 
 Substituting back:
 
-$$V(D^*, G) = \mathbb{E}_{x \sim p_{data}}[\log \frac{p_{data}(x)}{p_{data}(x) + p_G(x)}] + \mathbb{E}_{x \sim p_G}[\log \frac{p_G(x)}{p_{data}(x) + p_G(x)}]$$
+$$V(D^{*}, G) = \mathbb{E}_{x \sim p_{data}}[\log \frac{p_{data}(x)}{p_{data}(x) + p_G(x)}] + \mathbb{E}_{x \sim p_G}[\log \frac{p_G(x)}{p_{data}(x) + p_G(x)}]$$
 
 This can be rewritten as:
 
-$$V(D^*, G) = -2\log 2 + 2 \cdot JSD(p_{data} \parallel p_G)$$
+$$V(D^{*}, G) = -2\log 2 + 2 \cdot JSD(p_{data} \parallel p_G)$$
 
 where $JSD$ is the **Jensen-Shannon Divergence**—a symmetric divergence measure between distributions.
 
@@ -836,9 +836,9 @@ The GAN minimax formulation is a **sequential game** where convergence is unders
 
 **Nash Equilibrium**: A state where neither player benefits from unilaterally changing strategy
 
-$$\text{For Nash Eq: } \exists (G^*, D^*) \text{ such that:}$$
-$$G^* = \arg\min_G V(D^*, G)$$
-$$D^* = \arg\max_D V(D^*, G)$$
+$$\text{For Nash Eq: } \exists (G^{*}, D^{*}) \text{ such that:}$$
+$$G^{*} = \arg\min_G V(D^{*}, G)$$
+$$D^{*} = \arg\max_D V(D^{*}, G)$$
 
 **Key difference from optimization**:
 
@@ -850,7 +850,7 @@ $$D^* = \arg\max_D V(D^*, G)$$
 
 For fixed generator $G$, the optimal discriminator is:
 
-$$D^*(x) = \frac{p_{data}(x)}{p_{data}(x) + p_G(x)}$$
+$$D^{*}(x) = \frac{p_{data}(x)}{p_{data}(x) + p_G(x)}$$
 
 **Proof**:
 The discriminator objective for fixed $G$ is:
@@ -866,7 +866,7 @@ Solving: $D = \frac{p_{data}}{p_{data} + p_G}$
 
 ### 15.3 Global Optimality
 
-At optimal $D^*$ and optimal $G$:
+At optimal $D^{*}$ and optimal $G$:
 $$\min_G \max_D V(D, G) = -\log 4 + 2 \cdot JSD(p_{data} \parallel p_G)$$
 
 Minimum value $-\log 4$ achieved when $p_G = p_{data}$ (divergence = 0)
